@@ -1,0 +1,122 @@
+body{
+    margin:0;
+    font-family:sans-serif;
+    background:rgb(110, 16, 119);
+    }
+    main{
+        background:rgb(236, 241, 240); 
+        width:600px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .i_data{
+      font-size:10px;
+      color:grey;
+      font-weight: bold;
+      padding-left:5px;
+    }
+    #div1{
+    height:60px;
+    border-bottom:1px solid grey;
+    text-align:center;
+    margin-top:25px;
+    color:grey;
+    }
+    #div2{
+    height:60px;
+    padding-top:5px;
+    border-bottom:1px solid grey;
+    }
+    .input_description{
+      border:hidden;
+      height:30px;
+      padding-left:5px;
+      font-size:10px;
+      width:100%;
+      margin-top:5px;
+    }
+    #div3{
+    height:60px;
+    border-bottom:1px solid grey;
+    display:flex;
+    }
+    #div31{
+    width:50%;
+    border-right:1px solid grey;
+    padding-top:5px;
+    }
+    select{
+      width:90%;
+      color:grey;
+      border:none;
+    }
+    #div32{
+    width:50%;
+    padding-left:10px;
+    padding-top:5px;
+    }
+    #div4{
+    height:100px;
+    border-bottom:1px solid grey;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    }
+    .button1{
+      border:none;
+      color: white;
+      background-color:black;
+      font-size: 16px;
+      text-align: center;
+     // padding: 15px 5px;
+      cursor: pointer;
+      height:50px;
+      width:170px;
+      margin-bottom:15px;
+      border-radius:4px;
+      }
+      
+    .button2{
+      border:none;
+      color: white;
+      background-color:red;
+      height:50px;
+      font-size: 16px;
+      text-align: center;
+     // padding: 15px 5px;
+      cursor: pointer;
+      width:170px;
+      margin-left:5px;
+      border-radius:4px;
+    }
+    li{
+      list-style-type: none;
+    }
+    #div5{
+    }
+    #div51{
+      border-bottom:1px solid grey;
+      color:grey;
+      height:50px;
+      margin-top:5px;
+      //display:inline;
+    }
+    
+    #cal{
+      padding-left:28px;
+    }
+    
+    .btn{
+      float:right;
+      margin-right:50px;
+      margin-top:7px;
+      height:30px;
+      width:70px;
+      color:white;
+      background:rgb(119, 2, 2);
+      border-radius:4px;
+      font-size:10px;
+    }
+    select{
+      margin-top:5px;
+    }
