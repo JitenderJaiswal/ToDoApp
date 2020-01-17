@@ -7,9 +7,12 @@ module.exports.create=async function(req,res){
 }
 
 module.exports.delete= async function(req,res){
-    try{for(let j=0;j<req.query.check.length;j++)
-       {  const id=check[j]._id;
-        await todo.deleteOne({id}); 
+  try{
+       const checksid=req.query.check;
+      for(let i=0;i<checksid.length;i++)
+       {  
+         const id=checksid[i];
+         await todo.deleteOne({_id:id}); 
        }
      } catch(err){ console.log('Error', err); return;}
 
