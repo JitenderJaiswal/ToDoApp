@@ -1,41 +1,55 @@
 <html>
-<head><title><%=locals.title%></title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/home.css">
+<head>
+      <title><%=locals.title%></title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
-<main><div></div><form action="/users/create" method="GET">
-<div id="div1"><h1>TODO App </h1></div>
-<div id="div2"><label class="i_data">DESCRIPTION</label><br>
-               <input type="text" class="input_description"name="desc"  placeholder="What do you need to do?" rquired></div>
-<div id="div3">
-<div id="div31"><label class="i_data">CATEGORY</label><br>
-                <select name="selects" >
-                <option selected disabled> Choose a category</option>
-                <option value="Personal">Personal</option>
-                <option value="Work">Work</option>
-                <option value="School">School</option>
-                <option value="Cleaning">Cleaning</option>
-                <option value="Other">Other</option>
-                </select></div>
-<div id="div32"><label class="i_data">Due date</label><br>
-               <input class="input_description"id="date"name="date" type="date"/></div></div>
-<div id="div4"><button type="submit" class="button1"><i class="fas fa-plus"></i>&nbsp;&nbsp;ADD TASKS</button>
-</form>
-<form action="/users/delete" method="GET">
-    <button type="submit" class="button2"  ><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;DELETE TASKS</button>
-</div>
-<div id="div5"><ul><%for(let i of Todo){%>
-<div id="div51"><li><input type="checkbox" name="check" value="<%=i._id%>" >
-                    <abbr class="i_data"><%=i.desc%><i>
-                    <button class="btn"><%=i.selects%></button>
-                    <i class=""><%=i.date%></i><br>
-                    <i id="cal"class="far fa-calendar-alt"></i>   
-                </li>
-</div><%}%></div></ul></div>
+<main>
+      <div>
+           <form action="/users/create" method="GET">
+           <div id="div1"><h1>TODO App </h1></div>
+           <div id="div2"><label class="i_data">DESCRIPTION</label><br>
+                          <input type="text" class="input_description"name="desc"  placeholder="What do you need to do?" rquired>
+           </div>
+           <div id="div3">
+               <div id="div31"><label class="i_data">CATEGORY</label><br>
+                               <select name="selects">
+                                                     <option selected disabled> Choose a category</option>
+                                                     <option value="Personal">Personal</option>
+                                                     <option value="Work">Work</option>
+                                                     <option value="School">School</option>
+                                                     <option value="Cleaning">Cleaning</option>
+                                                     <option value="Other">Other</option>
+                               </select>
+                </div>
+                <div id="div32"><label class="i_data">Due date</label><br>
+                                <input class="input_description"id="date"name="date" type="date"/>
+                </div>
+           </div>
+           <div id="div4"><button type="submit" class="button1"><i class="fas fa-plus"></i>&nbsp;&nbsp;ADD TASKS</button>
+           </form>
+           
+           <form action="/users/delete" method="GET">
+               <button type="submit" class="button2"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;DELETE TASKS</button>
+    </div>
+    
+            <div id="div5">
+                <ul><%for(let i of Todo){%>
+                       <div id="div51"><li><input type="checkbox" name="check" value="<%=i._id%>" >
+                                           <abbr class="i_data"><%=i.desc%><i>
+                                           <button class="btn"><%=i.selects%></button>
+                                           <i class=""><%=i.date%></i><br>
+                                           <i id="cal"class="far fa-calendar-alt"></i>   
+                                       </li>
+                        </div>
+                    <%}%>
+                </ul>
+            </div>
+          </form>
+          
 </main>
-</form>
 <script type="text/javascript" src="/js/home.js"></script>
 </body>
 </html>
