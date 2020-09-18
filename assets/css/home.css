@@ -1,10 +1,41 @@
-body{
-    margin:0;
-    font-family:sans-serif;
-    background:rgb(110, 16, 119);
+body {
+  margin: 0;
+  text-align:center;
+  background-image: url("/images/i6.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  font-family:sans-serif;
+}
+.container{
+  height: 100%;
+  align-content: center;
+  }
+  
+  .card{
+    height: 50%;
+    margin-top:10px;
+    width: 600px;
+    background-color: rgba(0,0,0,0.5) !important;
     }
+  
+  .card-header {
+  color: white;
+  }
+  input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+    
+    }
+    .input-group-prepend span{
+      width: 50px;
+      background-color: #FFC312;
+      color: black;
+      border:0 !important;
+      }
+
     main{
-        background:rgb(236, 241, 240); 
+       
         width:600px;
         margin-left:auto;
         margin-right:auto;
@@ -17,7 +48,6 @@ body{
     }
     #div1{
     height:60px;
-    border-bottom:1px solid grey;
     text-align:center;
     margin-top:25px;
     color:grey;
@@ -25,25 +55,15 @@ body{
     #div2{
     height:60px;
     padding-top:5px;
-    border-bottom:1px solid grey;
     }
-    .input_description{
-      border:hidden;
-      height:30px;
-      padding-left:5px;
-      font-size:10px;
-      width:100%;
-      margin-top:5px;
-    }
+  
     #div3{
     height:60px;
-    border-bottom:1px solid grey;
     display:flex;
     }
     #div31{
     width:50%;
-    border-right:1px solid grey;
-    padding-top:5px;
+  
     }
     select{
       width:90%;
@@ -57,7 +77,6 @@ body{
     }
     #div4{
     height:100px;
-    border-bottom:1px solid grey;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -93,19 +112,18 @@ body{
       list-style-type: none;
     }
     #div5{
+      border-bottom:1px solid grey;
     }
     #div51{
-      border-bottom:1px solid grey;
       color:grey;
       height:50px;
       margin-top:5px;
-      //display:inline;
+      border-bottom:1px solid grey;
     }
-    
-    #cal{
-      padding-left:28px;
+   
+    #div51 input {
+      float:left;
     }
-    
     .btn{
       float:right;
       margin-right:50px;
