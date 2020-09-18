@@ -2,54 +2,84 @@
 <head>
       <title><%=locals.title%></title>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
-<main>
-      <div>
-           <form action="/users/create" method="GET">
-           <div id="div1"><h1>TODO App </h1></div>
-           <div id="div2"><label class="i_data">DESCRIPTION</label><br>
-                          <input type="text" class="input_description"name="desc"  placeholder="What do you need to do?" rquired>
-           </div>
-           <div id="div3">
-               <div id="div31"><label class="i_data">CATEGORY</label><br>
-                               <select name="selects">
-                                                     <option selected disabled> Choose a category</option>
-                                                     <option value="Personal">Personal</option>
-                                                     <option value="Work">Work</option>
-                                                     <option value="School">School</option>
-                                                     <option value="Cleaning">Cleaning</option>
-                                                     <option value="Other">Other</option>
-                               </select>
-                </div>
-                <div id="div32"><label class="i_data">Due date</label><br>
-                                <input class="input_description"id="date"name="date" type="date"/>
-                </div>
-           </div>
-           <div id="div4"><button type="submit" class="button1"><i class="fas fa-plus"></i>&nbsp;&nbsp;ADD TASKS</button>
-           </form>
-           
-           <form action="/users/delete" method="GET">
-               <button type="submit" class="button2"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;DELETE TASKS</button>
-    </div>
-    
-            <div id="div5">
-                <ul><%for(let i of Todo){%>
-                       <div id="div51"><li><input type="checkbox" name="check" value="<%=i._id%>" >
-                                           <abbr class="i_data"><%=i.desc%><i>
-                                           <button class="btn"><%=i.selects%></button>
-                                           <i class=""><%=i.date%></i><br>
-                                           <i id="cal"class="far fa-calendar-alt"></i>   
-                                       </li>
-                        </div>
-                    <%}%>
-                </ul>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header"><h3>TODO App</h3></div>
+                <main>
+                    <div>
+                         <form action="/users/create" method="GET">
+                            <div class="card-header">DESCRIPTION</div>
+                            <input type="text" class="form-control" name="desc"placeholder="What do you need to do?" required>
+            
+                         <div id="div3">
+                            <div id="div31"><label class="card-header">CATEGORY</label>
+                                <select class="form-control" name="selects">
+                                             <option selected disabled> Choose a category</option>
+                                            <option value="Personal">Personal</option>
+                                             <option value="Work">Work</option>
+                                            <option value="School">School</option>
+                                            <option value="Cleaning">Cleaning</option>
+                                             <option value="Other">Other</option>
+                                             </select>
+                              </div>
+                              <div id="div32"><label class="card-header">Due date</label>
+                                              <input class="form-control" id="date"name="date" type="date"/>
+                              </div>
+                         </div><br>
+                         <div id="div4"><button type="submit" class="button1"><i class="fas fa-plus"></i>&nbsp;&nbsp;ADD TASKS</button>
+                         </form>
+                         
+                         <form action="/users/delete" method="GET">
+                             <button type="submit" class="button2"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;DELETE TASKS</button>
+                  </div>
+                  
+                          <div id="div5">
+                              <ul><%for(let i of Todo){%>
+                                <div id="div51"><li><input type="checkbox" name="check" value="<%=i._id%>" >
+                                    <abbr class="card-header"><%=i.desc%><i>
+                                    <button class="btn"><%=i.selects%></button>
+                                    <i class=""><%=i.date%></i><br>
+                                    <i id="cal"class="far fa-calendar-alt"></i>   
+                                </li>
+                               </div>
+                                  <%}%>
+                              </ul>
+                          </div>
+                        </form>
+                        
+              </main>
             </div>
-          </form>
-          
-</main>
-<script type="text/javascript" src="/js/home.js"></script>
+        </div>
+    </div>
+<script>
+  <%if(flash.success && flash.success.length>0) {%>
+    new Noty({
+        theme: 'nest',
+        text: '<%= flash.success %>',
+        type:'success',
+        layout:'topRight',
+        timeout:1500
+     }).show();
+  <%}%>
+
+  <% if(flash.error && flash.error.length>0) {%>
+    new Noty({
+        theme:'nest',
+        text:'<%= flash.error %>',
+        type:'error',
+        layout:'topRight',
+        timeout:1500
+     }).show();
+  <%}%>
+</script>
 </body>
 </html>
